@@ -5,9 +5,9 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000', 'https://xaloc.onrender.com'];
+const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000', 'https://xaloc.onrender.com','https://xaloc.in/'];
 
 app.use(cors({
   origin: function(origin, callback){
@@ -335,11 +335,4 @@ This message was sent from your website service inquiry form.`,
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  console.log('Environment check:', {
-    nodeEnv: process.env.NODE_ENV,
-    gmailUser: process.env.GMAIL_USER ? 'Loaded' : 'Missing',
-    gmailPass: process.env.GMAIL_PASS ? 'Loaded' : 'Missing'
-  });
-});
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
