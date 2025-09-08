@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import './infinity-slider.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --color-xaloc-charcoal: #1A1A1A;
+  --color-xaloc-orange: #FF6B35;
+  --color-xaloc-yellow: #FFB800;
+  --color-xaloc-coral: #FF3366;
+  --color-xaloc-beige: #F5F5F5;
+  
+  --font-primary: "Inter", "Helvetica Neue", sans-serif;
+  --font-display: "Orbitron", "Arial Black", sans-serif;
+  
+  --animation-duration-fast: 200ms;
+  --animation-duration-normal: 300ms;
+  --animation-duration-slow: 500ms;
+}
+
+/* Custom Components */
+@layer components {
+  .bg-gradient-xaloc {
+    @apply bg-gradient-to-br from-xaloc-orange to-xaloc-coral;
+  }
+
+  .bg-gradient-xaloc-soft {
+    @apply bg-gradient-to-br from-xaloc-yellow to-xaloc-orange;
+  }
+
+  .text-gradient-xaloc {
+    @apply bg-gradient-to-r from-xaloc-orange via-xaloc-yellow to-xaloc-coral bg-clip-text text-transparent;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-dark {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:from-orange-400 hover:to-pink-400 hover:scale-105 relative group overflow-hidden;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-orange-500 text-orange-400 font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:bg-orange-500 hover:text-white hover:scale-105;
+  }
+}
+
+/* Custom Base Styles */
+@layer base {
+  body {
+    font-family: var(--font-primary);
+    @apply bg-gray-900 text-gray-100 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl lg:text-9xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-5xl lg:text-6xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styles */
+::selection {
+  background-color: rgba(255, 107, 53, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: rgba(255, 107, 53, 0.3);
+  color: white;
+}
+
+@keyframes video-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideText {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(-50%) translateY(-13.4%); }
+}
+
+@keyframes slideTextReverse {
+  0% { transform: translateX(-50%) translateY(-13.4%); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+.logo-glow {
+  filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.8));
+  transition: filter 0.3s ease-in-out;
+}
