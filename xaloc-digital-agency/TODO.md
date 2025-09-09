@@ -9,4 +9,4 @@
 - [x] Update Contact.jsx to navigate to /portfolio instead of scrolling
 - [x] Update Portfolio.jsx to add navigation to /portfolio for "View Full Portfolio" button
 - [x] Update XalocHero.jsx to navigate to /portfolio instead of scrolling
-- [ ] Test all portfolio buttons to ensure they redirect correctly
+- [x] Test all portfolio buttons to ensure they redirect correctly
