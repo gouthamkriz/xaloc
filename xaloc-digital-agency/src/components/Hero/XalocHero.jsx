@@ -2,10 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../UI/Button';
 import AnimatedText from '../UI/AnimatedText';
+import ConsultationFormModal from './ConsultationFormModal';
 
 const XalocHero = () => {
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const heroRef = useRef(null);
 
   useEffect(() => {
@@ -113,6 +115,15 @@ const XalocHero = () => {
             <Button
               variant="secondary"
               size="lg"
+              onClick={() => setIsModalOpen(true)}
+            >
+              Schedule Free Consultation
+            </Button>
+          </div>
+          <div style={{ animationDelay: '1.6s' }}>
+            <Button
+              variant="ghost"
+              size="lg"
               onClick={() => navigate('/portfolio')}
             >
               View Our Portfolio
@@ -128,6 +139,8 @@ const XalocHero = () => {
           <div className="w-1 h-3 bg-orange-500 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
+
+      <ConsultationFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

@@ -408,4 +408,63 @@ This review was submitted from your website review form.`,
   }
 });
 
+app.post('/schedule-consultation', async (req, res) => {
+  const { date, name, phone } = req.body;
+
+  if (!date || !name || !phone) {
+    return res.status(400).json({ error: 'Date, name, and phone number are required.' });
+  }
+
+  if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
+    console.error('Missing environment variables');
+    return res.status(500).json({ error: 'Server configuration error.' });
+  }
+
+  const transporter = createTransporter();
+
+  try {
+    await transporter.verify();
+  } catch (verifyError) {
+    console.error('SMTP verification failed:', verifyError);
+    return res.status(500).json({
+      error: 'Email configuration error',
+      details: verifyError.message
+    });
+  }
+
+  const mailOptions = {
+    from: `"Consultation Scheduler - ${name}" <${process.env.GMAIL_USER}>`,
+    to: 'xalocmediaparters@gmail.com',
+    subject: `New Consultation Scheduled by ${name}`,
+    text: `You have a new consultation scheduled:
+
+Name: ${name}
+Phone: ${phone}
+Date: ${date}
+
+---
+This message was sent from your website consultation scheduler form.`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #ff6b00;">New Consultation Scheduled</h2>
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Date:</strong> ${date}</p>
+        </div>
+        <p style="color: #666; font-size: 12px;">This message was sent from your website consultation scheduler form.</p>
+      </div>
+    `
+  };
+
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Consultation email sent:', info.messageId);
+    res.json({ success: true, message: 'Consultation scheduled successfully.', messageId: info.messageId });
+  } catch (error) {
+    console.error('Error sending consultation email:', error);
+    res.status(500).json({ error: 'Failed to send consultation email.', technical: error.message });
+  }
+});
+
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
