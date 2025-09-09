@@ -1,6 +1,6 @@
 // src/components/sections/Contact.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
   MapPin, Phone, Mail, Clock, Send,
   Facebook, Twitter, Instagram, Linkedin, Youtube
@@ -275,9 +275,9 @@ const Contact = () => {
                   />
                   <label htmlFor="privacy" className="text-sm text-gray-400">
                     I agree to the{' '}
-                    <a href="/privacy" className="text-xaloc-orange hover:text-xaloc-yellow transition-colors">
+                    <Link to="/privacy" className="text-xaloc-orange hover:text-xaloc-yellow transition-colors">
                       Privacy Policy
-                    </a>{' '}
+                    </Link>{' '}
                     and consent to being contacted by Xaloc Digital Marketing.
                   </label>
                 </div>
