@@ -1,11 +1,13 @@
 // src/components/sections/Services.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Target, Search, TrendingUp, MapPin, Code, 
   Play, Megaphone, Palette, Headphones 
 } from 'lucide-react';
+import ConsultationFormModal from '../Hero/ConsultationFormModal';
 
 const Services = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const services = [
     {
       icon: Target,
@@ -119,11 +121,20 @@ const Services = () => {
             <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
               Let's discuss how we can help transform your digital presence and drive real results for your business.
             </p>
-            <a href="tel:+918590940911" className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105">
-              Get Free Consultation
-            </a>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105"
+            >
+              Book a Strategy Call
+            </button>
           </div>
         </div>
+
+        {/* Consultation Form Modal */}
+        <ConsultationFormModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </div>
     </section>
   );

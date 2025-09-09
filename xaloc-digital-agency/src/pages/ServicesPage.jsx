@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import MainLayout from '../components/Layout/MainLayout';
-import { 
-  Facebook, 
-  Search, 
-  Globe, 
-  MapPin, 
-  Monitor, 
-  Video, 
-  Zap, 
+import {
+  Facebook,
+  Search,
+  Globe,
+  MapPin,
+  Monitor,
+  Video,
+  Zap,
   Palette,
   Headphones,
   ArrowRight,
@@ -16,10 +16,12 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import ConsultationFormModal from '../components/Hero/ConsultationFormModal';
 
 const ServicesPage = () => {
   const [hoveredService, setHoveredService] = useState(null);
   const [scrollY, setScrollY] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -262,7 +264,10 @@ const ServicesPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
               
-              <button className="group px-8 py-4 bg-transparent border-2 border-xaloc-orange text-xaloc-orange rounded-xl font-black text-lg hover:bg-xaloc-orange hover:text-white transform hover:scale-105 transition-all duration-300 flex items-center space-x-3">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="group px-8 py-4 bg-transparent border-2 border-xaloc-orange text-xaloc-orange rounded-xl font-black text-lg hover:bg-xaloc-orange hover:text-white transform hover:scale-105 transition-all duration-300 flex items-center space-x-3"
+              >
                 <span>Book a Strategy Call</span>
                 <Calendar className="w-5 h-5" />
               </button>
@@ -270,6 +275,7 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
+      <ConsultationFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       <style jsx>{`
         @keyframes fadeIn {
