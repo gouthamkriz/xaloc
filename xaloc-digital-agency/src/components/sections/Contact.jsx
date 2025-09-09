@@ -275,7 +275,7 @@ const Contact = () => {
                   />
                   <label htmlFor="privacy" className="text-sm text-gray-400">
                     I agree to the{' '}
-                    <a href="#" className="text-xaloc-orange hover:text-xaloc-yellow transition-colors">
+                    <a href="/privacy" className="text-xaloc-orange hover:text-xaloc-yellow transition-colors">
                       Privacy Policy
                     </a>{' '}
                     and consent to being contacted by Xaloc Digital Marketing.

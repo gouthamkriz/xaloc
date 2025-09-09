@@ -1,6 +1,7 @@
-# TODO: Add Terms & Conditions Page
+# Privacy Policy Implementation TODO
 
-- [x] Create src/pages/TermsPage.jsx with the provided content
-- [x] Update src/App.jsx to import TermsPage and add route
-- [x] Update src/components/Layout/Navigation.jsx to add Terms link
-- [x] Update src/components/Layout/Footer.jsx to add Terms link
+- [x] Create PrivacyPage.jsx in src/pages/ with privacy policy content
+- [x] Update Contact.jsx to change Privacy Policy link from "#" to "/privacy"
+- [x] Add /privacy route in App.jsx pointing to PrivacyPage
+- [ ] Verify the link navigates correctly
+- [ ] Ensure consistent styling with other pages

@@ -17,6 +17,7 @@ import BlogPage from './pages/BlogPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
 import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 
 import ScrollToTop from './components/UI/ScrollToTop';
 import FloatingButton from './components/UI/FloatingButton';
@@ -54,6 +55,7 @@ function App() {
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
       </Routes>
     </>
   );
