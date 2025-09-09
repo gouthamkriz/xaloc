@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Target, Users, Trophy, Zap } from 'lucide-react';
+import { Target, Users, Trophy, Zap, Clock } from 'lucide-react';
 import ImageInfinityLoop from '../UI/ImageInfinityLoop';
 import { useMousePositionPixels } from '../../hooks/useMousePositionPixels';
 
@@ -38,10 +38,11 @@ const About = () => {
   };
 
   const stats = [
-    { icon: Users, number: '500+', label: 'Happy Clients' },
-    { icon: Trophy, number: '95%', label: 'Success Rate' },
-    { icon: Zap, number: '1000+', label: 'Projects Delivered' },
-    { icon: Target, number: '24/7', label: 'Support' },
+    { icon: Users, number: '100%', label: 'Dedication' },
+    { icon: Trophy, number: '', label: 'Agile & Creative' },
+    { icon: Zap, number: '', label: 'Driven by Impact' },
+    { icon: Target, number: '', label: 'Personalized Approach' },
+    { icon: Clock, number: '', label: 'Always Available' },
   ];
 
   const text = [
@@ -170,7 +171,7 @@ const About = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center group">
               <div className="glass-dark p-6 rounded-xl group-hover:bg-xaloc-orange/10 transition-all duration-300">
