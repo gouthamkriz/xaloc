@@ -14,7 +14,7 @@ const Contact = () => {
     email: '',
     phone: '',
     company: '',
-    service: '',
+    services: [],
     message: ''
   });
 
@@ -29,13 +29,21 @@ const Contact = () => {
     });
   };
 
+  const handleServicesChange = (e) => {
+    const selectedOptions = Array.from(e.target.selectedOptions, option => option.value);
+    setFormData({
+      ...formData,
+      services: selectedOptions
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatusMessage('');
     setIsError(false);
 
     try {
-      const response = await fetch('https://xaloc.onrender.com/contact', {
+      const response = await fetch('https://xaloc.onrender.com/service-inquiry', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -43,6 +51,7 @@ const Contact = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          services: formData.services,
           message: formData.message
         })
       });
@@ -56,7 +65,7 @@ const Contact = () => {
           email: '',
           phone: '',
           company: '',
-          service: '',
+          services: [],
           message: ''
         });
       } else {
@@ -236,17 +245,18 @@ const Contact = () => {
 
                 <div>
                   <label className="block text-white font-medium mb-2">
-                    Service Interested In
+                    Select the services you need
                   </label>
                   <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-xaloc-orange transition-colors appearance-none cursor-pointer"
+                    name="services"
+                    multiple
+                    value={formData.services}
+                    onChange={handleServicesChange}
+                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-xaloc-orange transition-colors cursor-pointer"
+                    size={4}
                   >
-                    <option value="">Select a service</option>
                     {services.map((service, index) => (
-                      <option key={index} value={service} className="bg-gray-700 text-white">
+                      <option key={index} value={service} className="bg-gray-700 text-white py-1">
                         {service}
                       </option>
                     ))}

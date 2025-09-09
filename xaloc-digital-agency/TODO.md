@@ -1,14 +1,21 @@
-# TODO: Add Terms & Conditions Page
+# TODO: Update Contact Form for Multiple Service Selection
 
-- [x] Create src/pages/TermsPage.jsx with the provided content
-- [x] Update src/App.jsx to import TermsPage and add route
-- [x] Update src/components/Layout/Navigation.jsx to add Terms link
-- [x] Update src/components/Layout/Footer.jsx to add Terms link
+## Tasks
+- [x] Update Contact.jsx to use multi-select for services
+- [x] Change label from "Select a service" to "Select the services you need"
+- [x] Update formData to store services as array
+- [x] Update handleInputChange for multi-select
+- [x] Update form submission to send services array to /service-inquiry endpoint
+- [ ] Update backend /service-inquiry endpoint to handle services array
+- [ ] Update email content to list all selected services
+- [ ] Test the multi-select UI and form submission
+- [ ] Verify email includes all selected services
 
-# TODO: Add Schedule Free Consultation Feature
+## Dependent Files
+- xaloc-digital-agency/src/components/sections/Contact.jsx
+- backend/server.js
 
-- [x] Create ConsultationFormModal component with date picker, name, and phone fields
-- [x] Connect existing "Schedule Free Consultation" button in "Ready to Get Started?" section to modal
-- [x] Integrate modal with Contact component
-- [x] Add backend endpoint /schedule-consultation for email sending
-- [x] Implement form validation and submission handling
+## Followup Steps
+- Test the form submission and email content
+- Ensure proper validation for multi-select
+- Check responsive design for multi-select on mobile
