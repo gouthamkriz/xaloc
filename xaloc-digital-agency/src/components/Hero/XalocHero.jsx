@@ -35,13 +35,13 @@ const XalocHero = () => {
   };
 
   return (
-    <div ref={heroRef} className="relative min-h-screen bg-gray-900 overflow-hidden flex items-center justify-start text-left">
+    <div ref={heroRef} className="relative min-h-screen bg-gray-900 overflow-hidden flex flex-col items-center justify-center text-center px-6 md:px-16 py-10 md:py-20">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         {isVisible && (
           <>
             <video
-              className="absolute inset-0 w-full h-full object-cover animate-video-fade-in"
+              className="absolute inset-0 w-full h-auto object-cover animate-video-fade-in"
               autoPlay
               loop
               muted
@@ -49,7 +49,7 @@ const XalocHero = () => {
               src="/assets/videos/video1.mp4"
             ></video>
             <video
-              className="absolute inset-0 w-full h-full object-cover animate-video-fade-in"
+              className="absolute inset-0 w-full h-auto object-cover animate-video-fade-in"
               autoPlay
               loop
               muted
@@ -63,64 +63,62 @@ const XalocHero = () => {
       </div>
       
       {/* Main Content Container */}
-      <div className="relative z-20 w-full px-8 md:px-16 py-20">
-        <div className="max-w-6xl">
-          {/* Tagline */}
-          <div className="relative">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-snug">
-              <AnimatedText
-                text="Your brand."
-                gradient={true}
-                animation="slide-in-word"
-                className="block leading-none mb-2 md:mb-4"
-              />
-              <AnimatedText
-                text="Louder,"
-                gradient={true}
-                animation="slide-in-word"
-                delay={0.2}
-                className="block leading-none mb-2 md:mb-4"
-              />
-              <AnimatedText
-                text="brighter,"
-                gradient={true}
-                animation="slide-in-word"
-                delay={0.4}
-                className="block leading-none mb-2 md:mb-4"
-              />
-              <AnimatedText
-                text="unforgettable."
-                gradient={true}
-                animation="slide-in-word"
-                delay={0.6}
-                className="block leading-none"
-              />
-            </h1>
-            <div className="absolute inset-0 bg-gradient-to-r from-xaloc-orange to-xaloc-coral blur-3xl opacity-20 animate-pulse-glow" style={{ animationDuration: '4s' }}></div>
-          </div>
+      <div className="relative z-20 w-full max-w-6xl">
+        {/* Tagline */}
+        <div className="relative">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-snug">
+            <AnimatedText
+              text="Your brand."
+              gradient={true}
+              animation="slide-in-word"
+              className="block leading-none mb-2 sm:mb-4"
+            />
+            <AnimatedText
+              text="Louder,"
+              gradient={true}
+              animation="slide-in-word"
+              delay={0.2}
+              className="block leading-none mb-2 sm:mb-4"
+            />
+            <AnimatedText
+              text="brighter,"
+              gradient={true}
+              animation="slide-in-word"
+              delay={0.4}
+              className="block leading-none mb-2 sm:mb-4"
+            />
+            <AnimatedText
+              text="unforgettable."
+              gradient={true}
+              animation="slide-in-word"
+              delay={0.6}
+              className="block leading-none"
+            />
+          </h1>
+          <div className="absolute inset-0 bg-gradient-to-r from-xaloc-orange to-xaloc-coral blur-3xl opacity-20 animate-pulse-glow" style={{ animationDuration: '4s' }}></div>
         </div>
-        
-        {/* CTA Buttons */}
-        <div className="mt-12 flex flex-col sm:flex-row gap-6 items-center">
-          <div style={{ animationDelay: '1.2s' }}>
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => scrollToSection('contact')}
-            >
-              Start Your Project
-            </Button>
-          </div>
-          <div style={{ animationDelay: '1.4s' }}>
-            <Button
-              variant="secondary"
-              size="lg"
-              onClick={() => navigate('/portfolio')}
-            >
-              View Our Portfolio
-              <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
-            </Button>
-          </div>
+      </div>
+      
+      {/* CTA Buttons */}
+      <div className="mt-12 flex flex-col sm:flex-row gap-6 items-center">
+        <div style={{ animationDelay: '1.2s' }}>
+          <Button
+            variant="primary"
+            size="lg"
+            onClick={() => scrollToSection('contact')}
+          >
+            Start Your Project
+          </Button>
+        </div>
+        <div style={{ animationDelay: '1.4s' }}>
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={() => navigate('/portfolio')}
+          >
+            View Our Portfolio
+            <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+          </Button>
         </div>
       </div>
 

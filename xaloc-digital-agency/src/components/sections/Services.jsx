@@ -75,33 +75,33 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-800">
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-10 md:py-20 bg-gray-800">
+      <div className="container mx-auto px-6 md:px-20">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             Our <span className="text-gradient-xaloc">Services</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Comprehensive digital marketing solutions designed to elevate your brand 
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+            Comprehensive digital marketing solutions designed to elevate your brand
             and drive measurable results across all channels.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
-            <div 
-              key={index} 
-              className="group glass-dark p-8 rounded-2xl hover:bg-xaloc-orange/5 transition-all duration-300 hover:scale-105"
+            <div
+              key={index}
+              className="group glass-dark p-6 md:p-8 rounded-2xl hover:bg-xaloc-orange/5 transition-all duration-300 hover:scale-105 w-full"
             >
-              <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className="w-8 h-8 text-white" />
+              <div className={`w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </div>
-              
-              <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">{service.description}</p>
-              
+
+              <h3 className="text-lg md:text-xl font-bold text-white mb-4">{service.title}</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed text-sm md:text-base">{service.description}</p>
+
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="text-sm text-gray-300 flex items-center">
@@ -115,15 +115,15 @@ const Services = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="glass-dark p-8 rounded-2xl inline-block">
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Get Started?</h3>
-            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+        <div className="text-center mt-10 md:mt-16">
+          <div className="glass-dark p-6 md:p-8 rounded-2xl inline-block">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Ready to Get Started?</h3>
+            <p className="text-gray-400 mb-6 max-w-2xl mx-auto text-sm md:text-base">
               Let's discuss how we can help transform your digital presence and drive real results for your business.
             </p>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-6 md:px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105 text-sm md:text-base"
             >
               Book a Strategy Call
             </button>
