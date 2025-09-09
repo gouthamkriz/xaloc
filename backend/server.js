@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000', 'https://xaloc.onrender.com', 'https://xaloc.in', 'https://xaloc.in/', 'https://www.xaloc.in', 'https://www.xaloc.in/'];
+const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000','https://xaloc.netlify.app/', 'https://xaloc.onrender.com', 'https://xaloc.in', 'https://xaloc.in/', 'https://www.xaloc.in', 'https://www.xaloc.in/'];
 
 app.use(cors({
   origin: function(origin, callback){
