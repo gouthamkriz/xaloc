@@ -268,12 +268,12 @@ app.post('/newsletter', async (req, res) => {
 
 // New endpoint for service inquiry
 app.post('/service-inquiry', async (req, res) => {
-  const { name, email, service, message } = req.body;
+  const { name, email, services, message } = req.body;
 
-  console.log('Service inquiry received:', { name, email, service, messageLength: message?.length });
+  console.log('Service inquiry received:', { name, email, services, messageLength: message?.length });
 
-  if (!name || !email || !service || !message) {
-    return res.status(400).json({ error: 'Name, email, service, and message are required.' });
+  if (!name || !email || !services || !Array.isArray(services) || services.length === 0 || !message) {
+    return res.status(400).json({ error: 'Name, email, services, and message are required.' });
   }
 
   if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
@@ -302,7 +302,7 @@ app.post('/service-inquiry', async (req, res) => {
 
 Name: ${name}
 Email: ${email}
-Service Interested In: ${service}
+Services Interested In: ${services.join(', ')}
 Message:
 ${message}
 
@@ -314,7 +314,7 @@ This message was sent from your website service inquiry form.`,
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Service Interested In:</strong> ${service}</p>
+          <p><strong>Services Interested In:</strong> ${services.join(', ')}</p>
           <p><strong>Message:</strong></p>
           <div style="background: white; padding: 15px; border-radius: 4px; margin-top: 10px;">
             ${message.replace(/\n/g, '<br>')}
