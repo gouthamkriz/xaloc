@@ -30,6 +30,7 @@ const Navigation = ({ mobile = false, onItemClick }) => {
     { id: 'blog', label: 'Blog', to: '/blog' },
     { id: 'careers', label: 'Careers', to: '/careers' },
     { id: 'contact', label: 'Contact', to: '/contact' },
+    { id: 'terms', label: 'Terms & Conditions', to: '/terms' },
   ];
 
   const handleItemClick = () => {

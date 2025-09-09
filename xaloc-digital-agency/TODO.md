@@ -1,12 +1,6 @@
-# Portfolio Button Fixes
+# TODO: Add Terms & Conditions Page
 
-## Issues Found:
-- Contact.jsx: "View Our Portfolio" button scrolls to section instead of navigating to portfolio page
-- Portfolio.jsx: "View Full Portfolio" button has no functionality
-- XalocHero.jsx: "View Our Portfolio" button scrolls to section instead of navigating to portfolio page
-
-## Tasks:
-- [x] Update Contact.jsx to navigate to /portfolio instead of scrolling
-- [x] Update Portfolio.jsx to add navigation to /portfolio for "View Full Portfolio" button
-- [x] Update XalocHero.jsx to navigate to /portfolio instead of scrolling
-- [x] Test all portfolio buttons to ensure they redirect correctly
+- [x] Create src/pages/TermsPage.jsx with the provided content
+- [x] Update src/App.jsx to import TermsPage and add route
+- [x] Update src/components/Layout/Navigation.jsx to add Terms link
+- [x] Update src/components/Layout/Footer.jsx to add Terms link

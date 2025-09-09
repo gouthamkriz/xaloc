@@ -30,6 +30,7 @@ const Footer = () => {
         'Careers',
         'Blog',
         'Contact Us',
+        'Terms & Conditions',
       ]
     },
     {
@@ -158,6 +159,7 @@ const Footer = () => {
                         case 'Careers': return '/careers';
                         case 'Blog': return '/blog';
                         case 'Contact Us': return '/contact';
+                        case 'Terms & Conditions': return '/terms';
                         case 'META Ads Management':
                         case 'Google Ads Campaigns':
                         case 'SEO & Website Indexing':

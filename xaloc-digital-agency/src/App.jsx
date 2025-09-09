@@ -16,6 +16,7 @@ import PortfolioPage from './pages/PortfolioPage';
 import BlogPage from './pages/BlogPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
+import TermsPage from './pages/TermsPage';
 
 import ScrollToTop from './components/UI/ScrollToTop';
 import FloatingButton from './components/UI/FloatingButton';
@@ -52,6 +53,7 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/terms" element={<TermsPage />} />
       </Routes>
     </>
   );
