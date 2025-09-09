@@ -18,11 +18,11 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'glass-dark backdrop-blur-lg' : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 md:px-20 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div
-            className="flex items-center space-x-3 cursor-pointer group"
+            className="flex items-center space-x-2 md:space-x-3 cursor-pointer group"
             onClick={() => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
@@ -30,12 +30,12 @@ const Header = () => {
             <img
               src="/assets/images/logo/xaloc-logo-main.png"
               alt="Xaloc DIGITAL"
-              className="h-12 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(255,107,53,0.8)] group-hover:scale-105"
+              className="h-10 md:h-12 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(255,107,53,0.8)] group-hover:scale-105"
             />
             <div className="hidden sm:block">
               <div className="flex flex-col items-center">
-                <span className="text-xl font-display font-bold text-white transition-all duration-300 group-hover:text-shadow-[0_0_20px_rgba(255,255,255,0.8)] group-hover:scale-105">XALOC</span>
-                <span className="text-lg font-display font-bold text-xaloc-orange transition-all duration-300 group-hover:text-shadow-[0_0_20px_rgba(255,107,53,0.8)] group-hover:scale-105">DIGITAL</span>
+                <span className="text-lg md:text-xl font-display font-bold text-white transition-all duration-300 group-hover:text-shadow-[0_0_20px_rgba(255,255,255,0.8)] group-hover:scale-105">XALOC</span>
+                <span className="text-base md:text-lg font-display font-bold text-xaloc-orange transition-all duration-300 group-hover:text-shadow-[0_0_20px_rgba(255,107,53,0.8)] group-hover:scale-105">DIGITAL</span>
               </div>
             </div>
           </div>
@@ -50,13 +50,13 @@ const Header = () => {
             className="lg:hidden p-2 text-white hover:text-xaloc-orange transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4">
+          <div className="lg:hidden mt-4 pb-4 border-t border-gray-700 pt-4">
             <Navigation mobile={true} onItemClick={() => setIsMobileMenuOpen(false)} />
           </div>
         )}

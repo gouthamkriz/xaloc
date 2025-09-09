@@ -42,12 +42,12 @@ const Navigation = ({ mobile = false, onItemClick }) => {
       <Link
         to={item.to}
         onClick={handleItemClick}
-        className={`flex items-center space-x-1 px-4 py-2 text-sm font-medium transition-colors duration-200 hover:text-xaloc-orange ${
+        className={`flex items-center space-x-1 px-3 md:px-4 py-2 text-sm md:text-base font-medium transition-colors duration-200 hover:text-xaloc-orange ${
           mobile ? 'text-white block w-full text-left' : 'text-gray-300'
         }`}
       >
         <span>{item.label}</span>
-        {item.dropdown && <ChevronDown size={16} />}
+        {item.dropdown && <ChevronDown size={mobile ? 14 : 16} />}
       </Link>
 
       {/* Dropdown Menu */}
@@ -62,7 +62,7 @@ const Navigation = ({ mobile = false, onItemClick }) => {
               key={index}
               to={dropdownItem.to}
               onClick={handleItemClick}
-              className={`block px-4 py-2 text-sm text-gray-300 hover:text-xaloc-orange transition-colors ${
+              className={`block px-3 md:px-4 py-2 text-sm text-gray-300 hover:text-xaloc-orange transition-colors ${
                 mobile ? '' : 'hover:bg-xaloc-orange/10 first:rounded-t-lg last:rounded-b-lg'
               }`}
             >

@@ -29,7 +29,7 @@ const ServicesDetailPage = () => {
   const [inquiryFormData, setInquiryFormData] = useState({
     name: '',
     email: '',
-    serviceInterest: '',
+    selectedServices: [],
     message: ''
   });
 
@@ -38,10 +38,24 @@ const ServicesDetailPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInquiryInputChange = (e) => {
-    setInquiryFormData({
-      ...inquiryFormData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value, type, checked } = e.target;
+    if (name === 'selectedServices') {
+      let updatedServices = [...inquiryFormData.selectedServices];
+      if (checked) {
+        updatedServices.push(value);
+      } else {
+        updatedServices = updatedServices.filter(service => service !== value);
+      }
+      setInquiryFormData({
+        ...inquiryFormData,
+        selectedServices: updatedServices
+      });
+    } else {
+      setInquiryFormData({
+        ...inquiryFormData,
+        [name]: value
+      });
+    }
   };
 
   const handleInquirySubmit = async (e) => {
@@ -51,7 +65,12 @@ const ServicesDetailPage = () => {
     setIsSubmitting(true);
 
     // Frontend validation
-    if (!inquiryFormData.name.trim() || !inquiryFormData.email.trim() || !inquiryFormData.serviceInterest || !inquiryFormData.message.trim()) {
+    if (
+      !inquiryFormData.name.trim() ||
+      !inquiryFormData.email.trim() ||
+      inquiryFormData.selectedServices.length === 0 ||
+      !inquiryFormData.message.trim()
+    ) {
       setInquiryError(true);
       setInquiryStatus('Please fill in all required fields.');
       setIsSubmitting(false);
@@ -67,7 +86,7 @@ const ServicesDetailPage = () => {
         body: JSON.stringify({
           name: inquiryFormData.name.trim(),
           email: inquiryFormData.email.trim(),
-          service: inquiryFormData.serviceInterest,
+          services: inquiryFormData.selectedServices,
           message: inquiryFormData.message.trim()
         })
       });
@@ -79,7 +98,7 @@ const ServicesDetailPage = () => {
         setInquiryFormData({
           name: '',
           email: '',
-          serviceInterest: '',
+          selectedServices: [],
           message: ''
         });
       } else {
@@ -712,29 +731,26 @@ const ServicesDetailPage = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="serviceInterest" className="block text-sm font-semibold text-white mb-2">
-                    Service Interest *
+                  <label className="block text-sm font-semibold text-white mb-4">
+                    Services of Interest * (Select all that apply)
                   </label>
-                  <select
-                    id="serviceInterest"
-                    name="serviceInterest"
-                    value={inquiryFormData.serviceInterest}
-                    onChange={handleInquiryInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-xaloc-orange focus:border-transparent transition-all duration-300"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="META Ads Management">META Ads Management</option>
-                    <option value="Google Ads Campaigns">Google Ads Campaigns</option>
-                    <option value="SEO & Website Indexing">SEO & Website Indexing</option>
-                    <option value="GMB Management">GMB Management</option>
-                    <option value="Website Design & Development">Website Design & Development</option>
-                    <option value="Video Production & Editing">Video Production & Editing</option>
-                    <option value="Brand Strategy & Promotions">Brand Strategy & Promotions</option>
-                    <option value="Creative Design Services">Creative Design Services</option>
-                    <option value="24/7 Support & Consultation">24/7 Support & Consultation</option>
-                    <option value="Other">Other</option>
-                  </select>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {services.map((serviceOption) => (
+                      <label key={serviceOption.id} className="flex items-center space-x-3 cursor-pointer group">
+                        <input
+                          type="checkbox"
+                          name="selectedServices"
+                          value={serviceOption.title}
+                          checked={inquiryFormData.selectedServices.includes(serviceOption.title)}
+                          onChange={handleInquiryInputChange}
+                          className="w-4 h-4 text-xaloc-orange bg-gray-800 border-gray-700 rounded focus:ring-xaloc-orange focus:ring-2"
+                        />
+                        <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                          {serviceOption.title}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
 
                 <div>

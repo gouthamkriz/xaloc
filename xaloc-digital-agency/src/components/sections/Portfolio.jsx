@@ -31,14 +31,14 @@ const Portfolio = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-6">
+    <section id="portfolio" className="py-10 md:py-20 bg-gray-900">
+      <div className="container mx-auto px-6 md:px-20">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             Our <span className="text-gradient-xaloc">Portfolio</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
             Explore our latest projects and success stories that showcase 
             our expertise in digital marketing and brand transformation.
           </p>
@@ -62,14 +62,14 @@ const Portfolio = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {filteredProjects.map((project) => (
             <div 
               key={project.id}
-              className="group glass-dark rounded-2xl overflow-hidden hover:bg-xaloc-orange/5 transition-all duration-300 hover:scale-105"
+              className="group glass-dark rounded-2xl overflow-hidden hover:bg-xaloc-orange/5 transition-all duration-300 hover:scale-105 w-full"
             >
               {/* Project Preview */}
-              <div className="relative h-64 bg-gradient-to-r from-xaloc-orange/20 to-xaloc-coral/20 overflow-hidden">
+              <div className="relative h-48 md:h-64 bg-gradient-to-r from-xaloc-orange/20 to-xaloc-coral/20 overflow-hidden">
                 <iframe
                   src={project.siteUrl}
                   className="w-full h-full border-0"
@@ -90,14 +90,14 @@ const Portfolio = () => {
               {/* Project Info */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-white">{project.title}</h3>
                   <span className="text-sm font-medium text-xaloc-orange bg-xaloc-orange/10 px-3 py-1 rounded-full">
                     {project.results}
                   </span>
                 </div>
                 
                 <p className="text-sm text-xaloc-orange mb-2">{project.client}</p>
-                <p className="text-gray-400 mb-4 leading-relaxed">{project.description}</p>
+                <p className="text-gray-400 mb-4 leading-relaxed text-sm md:text-base">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
@@ -115,14 +115,14 @@ const Portfolio = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
-          <h3 className="text-2xl font-bold text-white mb-4">Want to See More?</h3>
-          <p className="text-gray-400 mb-6">
+        <div className="text-center mt-10 md:mt-16">
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Want to See More?</h3>
+          <p className="text-gray-400 mb-6 max-w-2xl mx-auto text-sm md:text-base">
             Check out our complete portfolio and case studies.
           </p>
           <button
             onClick={() => navigate('/portfolio')}
-            className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105"
+            className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-6 md:px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105 text-sm md:text-base"
           >
             View Full Portfolio
           </button>
