@@ -20,6 +20,7 @@ const Contact = () => {
 
   const [statusMessage, setStatusMessage] = useState('');
   const [isError, setIsError] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -310,8 +311,8 @@ const Contact = () => {
               Let's create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105"
               >
                 Schedule Free Consultation
@@ -365,6 +366,12 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* Consultation Form Modal */}
+      <ConsultationFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 };
