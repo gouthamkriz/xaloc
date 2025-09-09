@@ -6,6 +6,7 @@ import {
   Facebook, Twitter, Instagram, Linkedin, Youtube
 } from 'lucide-react';
 import ConsultationFormModal from '../Hero/ConsultationFormModal';
+import ScheduleMeetingModal from '../Hero/ScheduleMeetingModal';
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ const Contact = () => {
   const [statusMessage, setStatusMessage] = useState('');
   const [isError, setIsError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -381,12 +383,12 @@ const Contact = () => {
             <Clock className="w-8 h-8 text-xaloc-orange mx-auto mb-4 group-hover:scale-110 transition-transform" />
             <h4 className="text-white font-semibold mb-2">Schedule Meeting</h4>
             <p className="text-gray-400 text-sm mb-4">Book a convenient time for a detailed discussion about your project.</p>
-            <a 
-              href="#" 
+            <button
+              onClick={() => setIsScheduleModalOpen(true)}
               className="text-xaloc-orange hover:text-xaloc-yellow transition-colors font-medium"
             >
               Book Meeting
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -395,6 +397,12 @@ const Contact = () => {
       <ConsultationFormModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+      />
+
+      {/* Schedule Meeting Modal */}
+      <ScheduleMeetingModal
+        isOpen={isScheduleModalOpen}
+        onClose={() => setIsScheduleModalOpen(false)}
       />
     </section>
   );
