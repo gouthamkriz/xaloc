@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000','https://xaloc.netlify.app', 'https://xaloc.netlify.app/', 'https://xaloc.onrender.com', 'https://xaloc.in', 'https://xaloc.in/', 'https://www.xaloc.in', 'https://www.xaloc.in/'];
+const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000', 'http://192.168.31.218:5173', 'http://192.168.31.218:3000','https://xaloc.netlify.app', 'https://xaloc.netlify.app/', 'https://xaloc.onrender.com', 'https://xaloc.in', 'https://xaloc.in/', 'https://www.xaloc.in', 'https://www.xaloc.in/'];
 
 app.use(cors({
   origin: function(origin, callback){
@@ -466,5 +466,7 @@ This message was sent from your website consultation scheduler form.`,
     res.status(500).json({ error: 'Failed to send consultation email.', technical: error.message });
   }
 });
+
+
 
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
