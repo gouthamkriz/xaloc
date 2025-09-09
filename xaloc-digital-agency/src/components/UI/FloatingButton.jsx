@@ -145,58 +145,109 @@ const FloatingButton = () => {
               className="flex flex-col items-end space-y-3 mb-6"
             >
               {options.map((option, index) => (
-                <motion.button
-                  key={option.label}
-                  onClick={option.onClick}
-                  href={option.href}
-                  target={option.target}
-                  rel={option.target === '_blank' ? 'noopener noreferrer' : undefined}
-                  variants={itemVariants}
-                  whileHover={{
-                    scale: 1.05,
-                    x: -5,
-                    transition: { duration: 0.2, ease: "easeOut" }
-                  }}
-                  whileTap={{
-                    scale: 0.95,
-                    transition: { duration: 0.1 }
-                  }}
-                  className={`flex items-center space-x-3 ${option.color} text-white px-5 py-3 rounded-full shadow-lg ${option.shadowColor} backdrop-blur-sm border border-white/20 group relative overflow-hidden`}
-                >
-                  {/* Shimmer effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                    initial={{ x: '-100%', skewX: -15 }}
+                option.href ? (
+                  <motion.a
+                    key={option.label}
+                    href={option.href}
+                    target={option.target}
+                    rel={option.target === '_blank' ? 'noopener noreferrer' : undefined}
+                    variants={itemVariants}
                     whileHover={{
-                      x: '200%',
-                      transition: { duration: 0.6, ease: "easeOut" }
+                      scale: 1.05,
+                      x: -5,
+                      transition: { duration: 0.2, ease: "easeOut" }
                     }}
-                  />
-                  
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    whileTap={{
+                      scale: 0.95,
+                      transition: { duration: 0.1 }
+                    }}
+                    className={`flex items-center space-x-3 ${option.color} text-white px-5 py-3 rounded-full shadow-lg ${option.shadowColor} backdrop-blur-sm border border-white/20 group relative overflow-hidden`}
                   >
-                    <option.icon size={18} />
-                  </motion.div>
-                  <span className="text-sm font-medium whitespace-nowrap group-hover:text-white transition-colors duration-200">
-                    {option.label}
-                  </span>
-                  
-                  {/* Floating particles effect */}
-                  <motion.div
-                    className="absolute -top-1 -right-1 w-2 h-2 bg-white/40 rounded-full"
-                    animate={{
-                      y: [-2, -8, -2],
-                      opacity: [0, 1, 0],
+                    {/* Shimmer effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                      initial={{ x: '-100%', skewX: -15 }}
+                      whileHover={{
+                        x: '200%',
+                        transition: { duration: 0.6, ease: "easeOut" }
+                      }}
+                    />
+
+                    <motion.div
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                    >
+                      <option.icon size={18} />
+                    </motion.div>
+                    <span className="text-sm font-medium whitespace-nowrap group-hover:text-white transition-colors duration-200">
+                      {option.label}
+                    </span>
+
+                    {/* Floating particles effect */}
+                    <motion.div
+                      className="absolute -top-1 -right-1 w-2 h-2 bg-white/40 rounded-full"
+                      animate={{
+                        y: [-2, -8, -2],
+                        opacity: [0, 1, 0],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: index * 0.3
+                      }}
+                    />
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    key={option.label}
+                    onClick={option.onClick}
+                    variants={itemVariants}
+                    whileHover={{
+                      scale: 1.05,
+                      x: -5,
+                      transition: { duration: 0.2, ease: "easeOut" }
                     }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: index * 0.3
+                    whileTap={{
+                      scale: 0.95,
+                      transition: { duration: 0.1 }
                     }}
-                  />
-                </motion.button>
+                    className={`flex items-center space-x-3 ${option.color} text-white px-5 py-3 rounded-full shadow-lg ${option.shadowColor} backdrop-blur-sm border border-white/20 group relative overflow-hidden`}
+                  >
+                    {/* Shimmer effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                      initial={{ x: '-100%', skewX: -15 }}
+                      whileHover={{
+                        x: '200%',
+                        transition: { duration: 0.6, ease: "easeOut" }
+                      }}
+                    />
+
+                    <motion.div
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                    >
+                      <option.icon size={18} />
+                    </motion.div>
+                    <span className="text-sm font-medium whitespace-nowrap group-hover:text-white transition-colors duration-200">
+                      {option.label}
+                    </span>
+
+                    {/* Floating particles effect */}
+                    <motion.div
+                      className="absolute -top-1 -right-1 w-2 h-2 bg-white/40 rounded-full"
+                      animate={{
+                        y: [-2, -8, -2],
+                        opacity: [0, 1, 0],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: index * 0.3
+                      }}
+                    />
+                  </motion.button>
+                )
               ))}
             </motion.div>
           )}
