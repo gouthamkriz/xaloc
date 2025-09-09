@@ -5,6 +5,7 @@ import {
   MapPin, Phone, Mail, Clock, Send,
   Facebook, Twitter, Instagram, Linkedin, Youtube
 } from 'lucide-react';
+import ConsultationFormModal from '../Hero/ConsultationFormModal';
 
 const Contact = () => {
   const navigate = useNavigate();

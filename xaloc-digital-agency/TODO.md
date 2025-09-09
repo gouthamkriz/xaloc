@@ -8,7 +8,7 @@
 # TODO: Add Schedule Free Consultation Feature
 
 - [x] Create ConsultationFormModal component with date picker, name, and phone fields
-- [x] Add "Schedule Free Consultation" button to homepage hero section
-- [x] Integrate modal with hero component
+- [x] Connect existing "Schedule Free Consultation" button in "Ready to Get Started?" section to modal
+- [x] Integrate modal with Contact component
 - [x] Add backend endpoint /schedule-consultation for email sending
 - [x] Implement form validation and submission handling

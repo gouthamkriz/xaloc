@@ -115,15 +115,6 @@ const XalocHero = () => {
             <Button
               variant="secondary"
               size="lg"
-              onClick={() => setIsModalOpen(true)}
-            >
-              Schedule Free Consultation
-            </Button>
-          </div>
-          <div style={{ animationDelay: '1.6s' }}>
-            <Button
-              variant="ghost"
-              size="lg"
               onClick={() => navigate('/portfolio')}
             >
               View Our Portfolio
