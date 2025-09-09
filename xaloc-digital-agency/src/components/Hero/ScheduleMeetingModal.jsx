@@ -26,7 +26,7 @@ const ScheduleMeetingModal = ({ isOpen, onClose }) => {
     setSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:5000/schedule-meeting', {
+      const response = await fetch('https://xaloc.onrender.com/schedule-meeting', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

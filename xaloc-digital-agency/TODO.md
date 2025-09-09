@@ -10,5 +10,6 @@
 - [x] Add ScheduleMeetingModal component to Contact.jsx
 - [x] Implement backend API endpoint in backend/server.js for scheduling meeting
 - [x] Add email sending functionality in backend
-- [x] Connect frontend form submission to backend API
+- [x] Connect frontend form submission to backend API (updated to use production URL)
+- [x] Verify backend endpoints are properly implemented and connected
 - [ ] Test the feature end-to-end
