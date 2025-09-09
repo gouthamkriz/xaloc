@@ -1,21 +1,9 @@
-# TODO: Update Contact Form for Multiple Service Selection
+# TODO: Implement Schedule Meeting Feature
 
-## Tasks
-- [x] Update Contact.jsx to use multi-select for services
-- [x] Change label from "Select a service" to "Select the services you need"
-- [x] Update formData to store services as array
-- [x] Update handleInputChange for multi-select
-- [x] Update form submission to send services array to /service-inquiry endpoint
-- [ ] Update backend /service-inquiry endpoint to handle services array
-- [ ] Update email content to list all selected services
-- [ ] Test the multi-select UI and form submission
-- [ ] Verify email includes all selected services
-
-## Dependent Files
-- xaloc-digital-agency/src/components/sections/Contact.jsx
-- backend/server.js
-
-## Followup Steps
-- Test the form submission and email content
-- Ensure proper validation for multi-select
-- Check responsive design for multi-select on mobile
+- [x] Create ScheduleMeetingModal.jsx component with date, name, email, phone fields
+- [x] Add "Schedule Meeting" box with text and "Book Meeting" button in XalocHero.jsx
+- [x] Integrate modal opening on button click in XalocHero.jsx
+- [x] Implement backend API endpoint in backend/server.js for scheduling meeting
+- [x] Add email sending functionality in backend
+- [x] Connect frontend form submission to backend API
+- [ ] Test the feature end-to-end

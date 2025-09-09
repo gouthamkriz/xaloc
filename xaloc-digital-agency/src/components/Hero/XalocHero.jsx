@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../UI/Button';
 import AnimatedText from '../UI/AnimatedText';
 import ConsultationFormModal from './ConsultationFormModal';
+import ScheduleMeetingModal from './ScheduleMeetingModal';
 
 const XalocHero = () => {
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const heroRef = useRef(null);
 
   useEffect(() => {
@@ -121,6 +123,13 @@ const XalocHero = () => {
               <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
             </Button>
           </div>
+          <div style={{ animationDelay: '1.6s' }}>
+            <div className="p-6 bg-gray-800 rounded-lg shadow-lg cursor-pointer max-w-xs text-white" onClick={() => setIsScheduleModalOpen(true)}>
+              <h2 className="text-xl font-semibold mb-2">Schedule Meeting</h2>
+              <p className="mb-4">Book a convenient time for a detailed discussion about your project.</p>
+              <Button variant="primary" size="md">Book Meeting</Button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -131,7 +140,8 @@ const XalocHero = () => {
         </div>
       </div>
 
-      <ConsultationFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ConsultationFormModal isOpen={isConsultationModalOpen} onClose={() => setIsConsultationModalOpen(false)} />
+      <ScheduleMeetingModal isOpen={isScheduleModalOpen} onClose={() => setIsScheduleModalOpen(false)} />
     </div>
   );
 };
