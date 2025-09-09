@@ -147,16 +147,16 @@ const About = () => {
           </div>
 
           {/* Visual Element */}
-          <div className="relative">
+          <div className="relative max-w-md mx-auto lg:mx-0">
             <div
-              className="glass-dark p-8 rounded-2xl"
+              className="glass-dark p-8 rounded-2xl shadow-lg"
               onMouseEnter={handleMouseEnterLogoBox}
               onMouseLeave={handleMouseLeaveLogoBox}
             >
               <img
                 src="/assets/images/logo/xaloc-logo-main.png"
                 alt="Xaloc Logo"
-                className={`w-full h-96 object-contain mb-6 transition-shadow duration-300 ${
+                className={`w-full max-h-80 object-contain mb-6 transition-shadow duration-300 ${
                   isLogoGlowing ? 'logo-glow' : ''
                 }`}
               />

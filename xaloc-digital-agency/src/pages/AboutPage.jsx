@@ -152,12 +152,9 @@ const AboutPage = () => {
                 <div className="relative">
                   <div className="bg-gradient-to-br from-xaloc-orange to-orange-600 p-8 rounded-2xl">
                     <div className="text-center">
-                      <div className="text-4xl font-black text-white mb-2">500+</div>
-                      <div className="text-white/90 mb-4">Projects Delivered</div>
-                      <div className="text-4xl font-black text-white mb-2">95%</div>
-                      <div className="text-white/90 mb-4">Client Retention</div>
-                      <div className="text-4xl font-black text-white mb-2">6+</div>
-                      <div className="text-white/90">Years Experience</div>
+                      <div className="text-2xl font-black text-white mb-4">Driven by Impact</div>
+                      <div className="text-2xl font-black text-white mb-4">Personalized Approach</div>
+                      <div className="text-2xl font-black text-white">Always Available</div>
                     </div>
                   </div>
                 </div>
