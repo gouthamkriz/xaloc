@@ -335,4 +335,77 @@ This message was sent from your website service inquiry form.`,
   }
 });
 
+// New endpoint for review submissions
+app.post('/review', async (req, res) => {
+  const { rating, feedback, name, email } = req.body;
+
+  console.log('Review submission received:', { rating, feedbackLength: feedback?.length, name, email });
+
+  if (!rating || rating < 1 || rating > 5) {
+    return res.status(400).json({ error: 'Rating must be between 1 and 5.' });
+  }
+
+  if (!feedback || !feedback.trim()) {
+    return res.status(400).json({ error: 'Feedback is required.' });
+  }
+
+  if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
+    console.error('Missing environment variables');
+    return res.status(500).json({ error: 'Server configuration error.' });
+  }
+
+  const transporter = createTransporter();
+
+  try {
+    await transporter.verify();
+  } catch (verifyError) {
+    console.error('SMTP verification failed:', verifyError);
+    return res.status(500).json({
+      error: 'Email configuration error',
+      details: verifyError.message
+    });
+  }
+
+  const mailOptions = {
+    from: `"Review Submission" <${process.env.GMAIL_USER}>`,
+    to: 'xalocmediaparters@gmail.com',
+    subject: `New Review Submission - ${rating} Star${rating > 1 ? 's' : ''}`,
+    text: `You have received a new review:
+
+Rating: ${rating} star${rating > 1 ? 's' : ''}
+Feedback:
+${feedback}
+
+${name ? `Name: ${name}` : ''}
+${email ? `Email: ${email}` : ''}
+
+---
+This review was submitted from your website review form.`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #ff6b00;">New Review Submission</h2>
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <p><strong>Rating:</strong> ${'⭐'.repeat(rating)} (${rating} star${rating > 1 ? 's' : ''})</p>
+          <p><strong>Feedback:</strong></p>
+          <div style="background: white; padding: 15px; border-radius: 4px; margin-top: 10px;">
+            ${feedback.replace(/\n/g, '<br>')}
+          </div>
+          ${name ? `<p><strong>Name:</strong> ${name}</p>` : ''}
+          ${email ? `<p><strong>Email:</strong> ${email}</p>` : ''}
+        </div>
+        <p style="color: #666; font-size: 12px;">This review was submitted from your website review form.</p>
+      </div>
+    `
+  };
+
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Review email sent:', info.messageId);
+    res.json({ success: true, message: 'Review submitted successfully.', messageId: info.messageId });
+  } catch (error) {
+    console.error('Error sending review email:', error);
+    res.status(500).json({ error: 'Failed to submit review.', technical: error.message });
+  }
+});
+
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
