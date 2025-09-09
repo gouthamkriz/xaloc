@@ -29,11 +29,20 @@ const Contact = () => {
     });
   };
 
-  const handleServicesChange = (e) => {
-    const selectedOptions = Array.from(e.target.selectedOptions, option => option.value);
-    setFormData({
-      ...formData,
-      services: selectedOptions
+  const handleServicesChange = (service) => {
+    setFormData(prevData => {
+      const isSelected = prevData.services.includes(service);
+      if (isSelected) {
+        return {
+          ...prevData,
+          services: prevData.services.filter(s => s !== service)
+        };
+      } else {
+        return {
+          ...prevData,
+          services: [...prevData.services, service]
+        };
+      }
     });
   };
 
@@ -244,23 +253,28 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-white font-medium mb-2">
+                  <label className="block text-white font-medium mb-4">
                     Select the services you need
                   </label>
-                  <select
-                    name="services"
-                    multiple
-                    value={formData.services}
-                    onChange={handleServicesChange}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-xaloc-orange transition-colors cursor-pointer"
-                    size={4}
-                  >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {services.map((service, index) => (
-                      <option key={index} value={service} className="bg-gray-700 text-white py-1">
-                        {service}
-                      </option>
+                      <div key={index} className="flex items-center space-x-3">
+                        <input
+                          type="checkbox"
+                          id={`service-${index}`}
+                          checked={formData.services.includes(service)}
+                          onChange={() => handleServicesChange(service)}
+                          className="w-4 h-4 text-xaloc-orange bg-gray-700 border-gray-600 rounded focus:ring-xaloc-orange focus:ring-2"
+                        />
+                        <label
+                          htmlFor={`service-${index}`}
+                          className="text-gray-300 text-sm cursor-pointer hover:text-white transition-colors"
+                        >
+                          {service}
+                        </label>
+                      </div>
                     ))}
-                  </select>
+                  </div>
                 </div>
 
                 <div>
