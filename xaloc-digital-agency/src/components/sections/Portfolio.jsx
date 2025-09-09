@@ -1,8 +1,10 @@
 // src/components/sections/Portfolio.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ExternalLink, Eye, Filter } from 'lucide-react';
 
 const Portfolio = () => {
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('all');
 
   const filters = [
@@ -118,7 +120,10 @@ const Portfolio = () => {
           <p className="text-gray-400 mb-6">
             Check out our complete portfolio and case studies.
           </p>
-          <button className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105">
+          <button
+            onClick={() => navigate('/portfolio')}
+            className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105"
+          >
             View Full Portfolio
           </button>
         </div>

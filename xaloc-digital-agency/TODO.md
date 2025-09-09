@@ -1,19 +1,12 @@
-# Review Button Implementation TODO
+# Portfolio Button Fixes
 
-## Frontend Tasks
-- [x] Create ReviewModal.jsx component with star rating, feedback textarea, optional name/email fields
-- [x] Modify FloatingButton.jsx to open ReviewModal instead of navigating to '/reviews'
-- [x] Add form validation and submission handling in ReviewModal
-- [x] Integrate ReviewModal with FloatingButton component
+## Issues Found:
+- Contact.jsx: "View Our Portfolio" button scrolls to section instead of navigating to portfolio page
+- Portfolio.jsx: "View Full Portfolio" button has no functionality
+- XalocHero.jsx: "View Our Portfolio" button scrolls to section instead of navigating to portfolio page
 
-## Backend Tasks
-- [x] Add /review POST endpoint in server.js for handling review submissions
-- [x] Implement email sending functionality for review data
-- [x] Test email format and content
-
-## Testing Tasks
-- [x] Test modal opening and closing functionality
-- [x] Test form submission and email sending
-- [x] Verify error handling and user feedback
-- [x] Test optional fields (name and email)
-- [x] Fix production API URL configuration
+## Tasks:
+- [x] Update Contact.jsx to navigate to /portfolio instead of scrolling
+- [x] Update Portfolio.jsx to add navigation to /portfolio for "View Full Portfolio" button
+- [x] Update XalocHero.jsx to navigate to /portfolio instead of scrolling
+- [ ] Test all portfolio buttons to ensure they redirect correctly

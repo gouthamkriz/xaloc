@@ -1,11 +1,13 @@
 // src/components/sections/Contact.jsx
 import React, { useState } from 'react';
-import { 
+import { useNavigate } from 'react-router-dom';
+import {
   MapPin, Phone, Mail, Clock, Send,
   Facebook, Twitter, Instagram, Linkedin, Youtube
 } from 'lucide-react';
 
 const Contact = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -313,8 +315,8 @@ const Contact = () => {
               >
                 Schedule Free Consultation
               </button>
-              <button 
-                onClick={() => document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })}
+              <button
+                onClick={() => navigate('/portfolio')}
                 className="border-2 border-xaloc-orange text-xaloc-orange px-8 py-3 rounded-full font-semibold hover:bg-xaloc-orange hover:text-white transition-all duration-300 hover:scale-105"
               >
                 View Our Portfolio

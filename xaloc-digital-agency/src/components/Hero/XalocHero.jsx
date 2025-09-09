@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../UI/Button';
 import AnimatedText from '../UI/AnimatedText';
 
 const XalocHero = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const heroRef = useRef(null);
 
@@ -111,7 +113,7 @@ const XalocHero = () => {
             <Button
               variant="secondary"
               size="lg"
-              onClick={() => scrollToSection('portfolio')}
+              onClick={() => navigate('/portfolio')}
             >
               View Our Portfolio
               <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
