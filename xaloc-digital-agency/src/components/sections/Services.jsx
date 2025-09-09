@@ -119,9 +119,9 @@ const Services = () => {
             <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
               Let's discuss how we can help transform your digital presence and drive real results for your business.
             </p>
-            <button className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105">
+            <a href="tel:+918590940911" className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105">
               Get Free Consultation
-            </button>
+            </a>
           </div>
         </div>
       </div>

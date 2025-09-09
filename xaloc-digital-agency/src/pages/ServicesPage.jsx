@@ -256,11 +256,11 @@ const ServicesPage = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-xaloc-orange to-orange-600 text-white rounded-xl font-black text-lg hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 overflow-hidden">
+              <a href="tel:+918590940911" className="group relative px-8 py-4 bg-gradient-to-r from-xaloc-orange to-orange-600 text-white rounded-xl font-black text-lg hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 overflow-hidden">
                 <span className="relative z-10">Get Free Consultation</span>
                 <Phone className="w-5 h-5 relative z-10" />
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </button>
+              </a>
               
               <button className="group px-8 py-4 bg-transparent border-2 border-xaloc-orange text-xaloc-orange rounded-xl font-black text-lg hover:bg-xaloc-orange hover:text-white transform hover:scale-105 transition-all duration-300 flex items-center space-x-3">
                 <span>Book a Strategy Call</span>
