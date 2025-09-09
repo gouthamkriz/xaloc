@@ -9,10 +9,11 @@
 ## Backend Tasks
 - [x] Add /review POST endpoint in server.js for handling review submissions
 - [x] Implement email sending functionality for review data
-- [ ] Test email format and content
+- [x] Test email format and content
 
 ## Testing Tasks
-- [ ] Test modal opening and closing functionality
-- [ ] Test form submission and email sending
-- [ ] Verify error handling and user feedback
-- [ ] Test optional fields (name and email)
+- [x] Test modal opening and closing functionality
+- [x] Test form submission and email sending
+- [x] Verify error handling and user feedback
+- [x] Test optional fields (name and email)
+- [x] Fix production API URL configuration
