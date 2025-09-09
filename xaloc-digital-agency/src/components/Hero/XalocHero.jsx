@@ -39,25 +39,14 @@ const XalocHero = () => {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         {isVisible && (
-          <>
-            <video
-              className="absolute inset-0 w-full h-auto object-cover animate-video-fade-in"
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="/assets/videos/video1.mp4"
-            ></video>
-            <video
-              className="absolute inset-0 w-full h-auto object-cover animate-video-fade-in"
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="/assets/videos/video2.mp4"
-              style={{ animationDelay: '10s' }}
-            ></video>
-          </>
+          <video
+            className="absolute inset-0 w-full h-full object-cover animate-video-fade-in"
+            autoPlay
+            loop
+            muted
+            playsInline
+            src="/assets/videos/home hero.mp4"
+          ></video>
         )}
         <div className="absolute inset-0 bg-gray-900/70 backdrop-blur-sm z-10"></div>
       </div>
