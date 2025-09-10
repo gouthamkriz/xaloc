@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Target, Users, Trophy, Zap, Clock } from 'lucide-react';
+import { Target, Star, Trophy, Zap, Headphones } from 'lucide-react';
 import ImageInfinityLoop from '../UI/ImageInfinityLoop';
 import { useMousePositionPixels } from '../../hooks/useMousePositionPixels';
 
@@ -16,11 +16,11 @@ const About = () => {
   };
 
   const stats = [
-    { icon: Users, number: '100%', label: 'Dedication' },
+    { icon: Star, number: '100%', label: 'Client Satisfaction' },
     { icon: Trophy, number: '', label: 'Agile & Creative' },
     { icon: Zap, number: '', label: 'Driven by Impact' },
     { icon: Target, number: '', label: 'Personalized Approach' },
-    { icon: Clock, number: '', label: 'Always Available' },
+    { icon: Headphones, number: '', label: '24/7 Support' },
   ];
 
   const text = [

@@ -1,9 +1,9 @@
-# TODO: Update About Section Text
+# TODO: Update About Section Stats
 
 ## Tasks
-- [x] Update About.jsx to remove hover color effect and mouse tracking
-- [x] Simplify text rendering to normal paragraphs without word spans
-- [ ] Test changes on desktop and mobile for proper structure
+- [x] Update imports for Star and Headphones icons
+- [x] Update stats array with new labels and icons
+- [x] Ensure all stat boxes remain the same size
 
 ## Progress
 - [x] Plan confirmed by user
