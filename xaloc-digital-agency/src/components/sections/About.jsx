@@ -137,7 +137,7 @@ const About = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center group">
-              <div className="glass-dark p-4 md:p-6 rounded-xl group-hover:bg-xaloc-orange/10 transition-all duration-300">
+              <div className="glass-dark p-4 md:p-6 rounded-xl group-hover:bg-xaloc-orange/10 transition-all duration-300 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
                 <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-xaloc-orange mx-auto mb-4" />
                 <div className="text-2xl md:text-3xl font-black text-white mb-2">{stat.number}</div>
                 <div className="text-gray-400 text-sm md:text-base">{stat.label}</div>
