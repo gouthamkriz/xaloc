@@ -5,29 +5,7 @@ import { useMousePositionPixels } from '../../hooks/useMousePositionPixels';
 
 const About = () => {
   const mousePosition = useMousePositionPixels();
-  const [hoveredWords, setHoveredWords] = React.useState(new Set());
   const [isLogoGlowing, setIsLogoGlowing] = React.useState(false);
-
-  const handleMouseMove = (e) => {
-    const spans = document.querySelectorAll('.hover-word');
-    const newHoveredWords = new Set();
-
-    spans.forEach((span, index) => {
-      const rect = span.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      const distance = Math.sqrt(
-        Math.pow(e.clientX - centerX, 2) + Math.pow(e.clientY - centerY, 2)
-      );
-      const radius = 120; // increased radius for better coverage
-
-      if (distance < radius) {
-        newHoveredWords.add(index);
-      }
-    });
-
-    setHoveredWords(newHoveredWords);
-  };
 
   const handleMouseEnterLogoBox = () => {
     setIsLogoGlowing(true);
@@ -53,7 +31,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-10 md:py-20 bg-gray-900 relative overflow-hidden" onMouseMove={handleMouseMove}>
+    <section id="about" className="py-10 md:py-20 bg-gray-900 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 md:top-20 left-5 md:left-10 w-48 md:w-72 h-48 md:h-72 bg-xaloc-orange rounded-full blur-3xl"></div>
@@ -66,27 +44,12 @@ const About = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6">
             About <span className="text-gradient-xaloc">Xaloc</span>
           </h2>
-          <div className="text-base md:text-lg font-semibold max-w-6xl mx-auto px-4 leading-relaxed break-words">
-            {(() => {
-              let wordCounter = 0;
-              return text.map((paragraph, paraIndex) => (
-                <p key={paraIndex} className={paraIndex < text.length - 1 ? "mb-3" : ""}>
-                  {paragraph.split(' ').map((word, wordIndex) => {
-                    const currentIndex = wordCounter++;
-                    return (
-                      <span
-                        key={currentIndex}
-                        className={`hover-word inline transition-colors duration-300 mr-2 ${
-                          hoveredWords.has(currentIndex) ? 'text-xaloc-orange' : 'text-gray-400'
-                        }`}
-                      >
-                        {word}
-                      </span>
-                    );
-                  })}
-                </p>
-              ));
-            })()}
+          <div className="text-base md:text-lg font-semibold max-w-6xl mx-auto px-4 leading-relaxed break-words text-gray-400">
+            {text.map((paragraph, paraIndex) => (
+              <p key={paraIndex} className={paraIndex < text.length - 1 ? "mb-3" : ""}>
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
 
