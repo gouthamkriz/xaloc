@@ -89,11 +89,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Placeholder client logos - replace with real client logos
-  const clientLogos = [
-    'TechStart Inc.', 'Luxury Brand Co.', 'Healthcare Plus', 'EduTech Solutions',
-    'Real Estate Pro', 'Fashion Forward', 'Finance First', 'Green Energy Co.'
-  ];
+
 
   return (
     <MainLayout>
@@ -269,45 +265,6 @@ const AboutPage = () => {
       </section>
 
       <AboutImageSlider />
-
-      {/* Section 4: Clientele */}
-      <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-              Our Valued <span className="text-gradient-xaloc">Clients</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              We've worked with businesses across industries—tech startups, luxury brands, healthcare, 
-              education, real estate, and more. Each collaboration is unique, but the goal is the same: 
-              help brands shine brighter in the digital landscape.
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {clientLogos.map((client, index) => (
-                <div key={index} className="glass-dark p-6 rounded-xl flex items-center justify-center h-24 group hover:bg-xaloc-orange/10 transition-all duration-300">
-                  <span className="text-gray-400 font-semibold text-sm text-center group-hover:text-xaloc-orange transition-colors">
-                    {client}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <div className="glass-dark p-8 rounded-2xl max-w-2xl mx-auto">
-              <h3 className="text-2xl font-black text-white mb-4">Success Stories</h3>
-              <p className="text-gray-400 leading-relaxed">
-                From 300% revenue growth for a tech startup to viral campaigns for luxury brands, 
-                our results speak for themselves. Every project is a testament to our commitment 
-                to excellence and our passion for digital innovation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Section 5: Call-to-Action */}
       <section className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
