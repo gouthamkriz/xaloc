@@ -10,6 +10,13 @@ const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const services = [
     {
+      icon: Code,
+      title: 'Website Design & Development',
+      description: 'Custom websites that look amazing and perform exceptionally.',
+      features: ['Responsive Design', 'E-commerce Solutions', 'CMS Integration'],
+      color: 'from-indigo-500 to-indigo-600'
+    },
+    {
       icon: Target,
       title: 'META Ads Management',
       description: 'Strategic Facebook & Instagram advertising campaigns that convert.',
@@ -36,13 +43,6 @@ const Services = () => {
       description: 'Optimize your local presence and attract nearby customers.',
       features: ['Profile Optimization', 'Review Management', 'Local Citations'],
       color: 'from-red-500 to-red-600'
-    },
-    {
-      icon: Code,
-      title: 'Website Design & Development',
-      description: 'Custom websites that look amazing and perform exceptionally.',
-      features: ['Responsive Design', 'E-commerce Solutions', 'CMS Integration'],
-      color: 'from-indigo-500 to-indigo-600'
     },
     {
       icon: Play,

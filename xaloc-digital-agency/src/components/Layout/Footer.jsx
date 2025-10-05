@@ -25,7 +25,6 @@ const Footer = () => {
       title: 'Company',
       links: [
         'About Us',
-        'Our Portfolio',
         'Case Studies',
         'Careers',
         'Blog',
@@ -54,11 +53,11 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://www.instagram.com/xaloc_digital/?igsh=MWM1dHhwcjNwbXM3eg%3D%3D#', label: 'Facebook' },
+    { icon: Facebook, href: 'https://www.facebook.com/XalocDigital', label: 'Facebook' },
     { icon: Instagram, href: 'https://www.instagram.com/xaloc_digital/?igsh=MWM1dHhwcjNwbXM3eg%3D%3D#', label: 'Instagram' },
     { icon: Twitter, href: 'https://x.com/Xalocdigital', label: 'Twitter' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/xaloc-brand-promoters/', label: 'LinkedIn' },
-    { icon: Youtube, href: 'https://www.youtube.com/@XaloC_Brand_Promoters', label: 'YouTube' },
+    { icon: Youtube, href: 'https://youtube.com/@xaloc_digital?si=j2ageoOTVLxZNYlc', label: 'YouTube' },
   ];
 
   const [newsletterEmail, setNewsletterEmail] = React.useState('');

@@ -1,11 +1,9 @@
-# TODO: Update About Section Stats
+# Remove Portfolio Page Tasks
 
-## Tasks
-- [x] Update imports for Star and Headphones icons
-- [x] Update stats array with new labels and icons
-- [x] Ensure all stat boxes remain the same size
-
-## Progress
-- [x] Plan confirmed by user
-- [x] File updated
-- [x] Tested
+- [x] Remove portfolio nav item from Navigation.jsx
+- [x] Remove PortfolioPage import and route from App.jsx
+- [x] Remove "View Our Portfolio" button from XalocHero.jsx
+- [x] Remove "View Our Portfolio" button from Contact.jsx
+- [x] Remove Portfolio link from Footer.jsx
+- [x] Delete PortfolioPage.jsx file
+- [x] Delete Portfolio.jsx file

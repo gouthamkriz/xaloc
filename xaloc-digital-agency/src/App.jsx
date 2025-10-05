@@ -12,7 +12,6 @@ import SlidingTextSection from './components/UI/SlidingText';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ServicesDetailPage from './pages/ServicesDetailPage';
-import PortfolioPage from './pages/PortfolioPage';
 import BlogPage from './pages/BlogPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
@@ -50,7 +49,6 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/:id" element={<ServicesDetailPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/contact" element={<ContactPage />} />

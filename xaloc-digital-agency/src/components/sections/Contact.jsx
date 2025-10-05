@@ -124,11 +124,11 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://www.instagram.com/xaloc_digital/?igsh=MWM1dHhwcjNwbXM3eg%3D%3D#', label: 'Facebook', color: 'hover:text-blue-500' },
+    { icon: Facebook, href: 'https://www.facebook.com/XalocDigital', label: 'Facebook', color: 'hover:text-blue-500' },
     { icon: Instagram, href: 'https://www.instagram.com/xaloc_digital/?igsh=MWM1dHhwcjNwbXM3eg%3D%3D#', label: 'Instagram', color: 'hover:text-pink-500' },
     { icon: Twitter, href: 'https://x.com/Xalocdigital', label: 'Twitter', color: 'hover:text-blue-400' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/xaloc-brand-promoters/', label: 'LinkedIn', color: 'hover:text-blue-600' },
-    { icon: Youtube, href: 'https://www.youtube.com/@XaloC_Brand_Promoters', label: 'YouTube', color: 'hover:text-red-500' },
+    { icon: Youtube, href: 'https://youtube.com/@xaloc_digital?si=j2ageoOTVLxZNYlc', label: 'YouTube', color: 'hover:text-red-500' },
   ];
 
   return (
@@ -342,12 +342,6 @@ const Contact = () => {
                 className="bg-gradient-to-r from-xaloc-orange to-xaloc-coral text-white px-8 py-3 rounded-full font-semibold hover:from-orange-400 hover:to-pink-400 transition-all duration-300 hover:scale-105"
               >
                 Schedule Free Consultation
-              </button>
-              <button
-                onClick={() => navigate('/portfolio')}
-                className="border-2 border-xaloc-orange text-xaloc-orange px-8 py-3 rounded-full font-semibold hover:bg-xaloc-orange hover:text-white transition-all duration-300 hover:scale-105"
-              >
-                View Our Portfolio
               </button>
             </div>
           </div>

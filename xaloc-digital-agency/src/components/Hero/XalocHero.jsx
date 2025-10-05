@@ -99,16 +99,6 @@ const XalocHero = () => {
             Start Your Project
           </Button>
         </div>
-        <div style={{ animationDelay: '1.4s' }}>
-          <Button
-            variant="secondary"
-            size="lg"
-            onClick={() => navigate('/portfolio')}
-          >
-            View Our Portfolio
-            <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
-          </Button>
-        </div>
       </div>
 
       {/* Scroll Indicator */}

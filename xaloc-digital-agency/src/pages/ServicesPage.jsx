@@ -33,6 +33,15 @@ const ServicesPage = () => {
   const services = [
     {
       id: 1,
+      icon: Monitor,
+      title: "Website Design & Development",
+      description: "Custom websites that look amazing and perform exceptionally.",
+      highlights: ["Responsive Design", "E-commerce Solutions", "CMS Integration"],
+      gradient: "from-cyan-600 to-blue-600",
+      hoverGradient: "from-cyan-500 to-blue-500"
+    },
+    {
+      id: 2,
       icon: Facebook,
       title: "META Ads Management",
       description: "Strategic Facebook & Instagram advertising campaigns that convert.",
@@ -41,7 +50,7 @@ const ServicesPage = () => {
       hoverGradient: "from-blue-500 to-purple-500"
     },
     {
-      id: 2,
+      id: 3,
       icon: Search,
       title: "Google Ads Campaigns",
       description: "Data-driven PPC campaigns that maximize your ROI.",
@@ -50,7 +59,7 @@ const ServicesPage = () => {
       hoverGradient: "from-green-500 to-blue-500"
     },
     {
-      id: 3,
+      id: 4,
       icon: Globe,
       title: "SEO & Website Indexing",
       description: "Boost your organic visibility and search rankings.",
@@ -59,22 +68,13 @@ const ServicesPage = () => {
       hoverGradient: "from-orange-500 to-red-500"
     },
     {
-      id: 4,
+      id: 5,
       icon: MapPin,
       title: "GMB Management",
       description: "Optimize your local presence and attract nearby customers.",
       highlights: ["Profile Optimization", "Review Management", "Local Citations"],
       gradient: "from-purple-600 to-pink-600",
       hoverGradient: "from-purple-500 to-pink-500"
-    },
-    {
-      id: 5,
-      icon: Monitor,
-      title: "Website Design & Development",
-      description: "Custom websites that look amazing and perform exceptionally.",
-      highlights: ["Responsive Design", "E-commerce Solutions", "CMS Integration"],
-      gradient: "from-cyan-600 to-blue-600",
-      hoverGradient: "from-cyan-500 to-blue-500"
     },
     {
       id: 6,
@@ -199,9 +199,61 @@ const ServicesPage = () => {
               >
                 {/* Main Card */}
                 <div className={`relative p-8 h-full bg-gradient-to-br ${service.gradient} transition-all duration-500 group-hover:${service.hoverGradient}`}>
+                  {/* SEO Keywords */}
+                  {service.title === "Website Design & Development" && (
+                    <div className="sr-only">
+                      Website Design Services Website Design Services Website Design Services Website Design Services
+                      development development development development
+                      professional professional professional professional
+                      e-commerce e-commerce e-commerce e-commerce
+                      user friendly user friendly user friendly user friendly
+                      best best best best
+                      kerala kerala kerala kerala
+                      Thrissur Thrissur Thrissur Thrissur
+                      api integration api integration api integration api integration
+                      front end front end front end front end
+                      back end back end back end back end
+                      mobile friendly mobile friendly mobile friendly mobile friendly
+                      fast fast fast fast
+                      secure secure secure secure
+                      seo seo seo seo
+                      experienced experienced experienced experienced
+                      web solutions web solutions web solutions web solutions
+                    </div>
+                  )}
+                  {service.title === "META Ads Management" && (
+                    <div className="sr-only">
+                      Facebook Facebook Facebook Facebook
+                      Instagram Instagram Instagram Instagram
+                      ads ads ads ads
+                      Best Best Best Best
+                      meta ads meta ads meta ads meta ads
+                      thrissur thrissur thrissur thrissur
+                      Meta Ads Experts in Kerala Meta Ads Experts in Kerala Meta Ads Experts in Kerala Meta Ads Experts in Kerala
+                      Trusted Trusted Trusted Trusted
+                      scaling scaling scaling scaling
+                      growth growth growth growth
+                    </div>
+                  )}
+                  {service.title === "Google Ads Campaigns" && (
+                    <div className="sr-only">
+                      Google Ads Google Ads Google Ads Google Ads
+                      Campaign Campaign Campaign Campaign
+                      PPC PPC PPC PPC
+                      best best best best
+                      trusted trusted trusted trusted
+                      kerala kerala kerala kerala
+                      Thrissur Thrissur Thrissur Thrissur
+                      youtube youtube youtube youtube
+                      certified certified certified certified
+                      experienced experienced experienced experienced
+                      GMB GMB GMB GMB
+                      ROI ROI ROI ROI
+                    </div>
+                  )}
                   {/* Glowing border effect */}
                   <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
-                  
+
                   {/* Icon */}
                   <div className="relative mb-6">
                     <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/30 transition-all duration-300 group-hover:scale-110">

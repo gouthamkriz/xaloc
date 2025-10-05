@@ -122,6 +122,49 @@ const ServicesDetailPage = () => {
   const services = [
     {
       id: 1,
+      icon: Monitor,
+      title: "Website Design & Development",
+      shortDescription: "Custom websites that look stunning and perform seamlessly across devices.",
+      highlights: ["Modern UI/UX", "Mobile-first", "SEO-ready builds"],
+      gradient: "from-cyan-600 to-blue-600",
+      hoverGradient: "from-cyan-500 to-blue-500",
+      detailedDescription: "Custom websites designed for performance, branding, and conversions. Your website is your 24/7 salesperson. If it looks outdated or loads slow, you're losing trust and sales.",
+      benefits: [
+        "Responsive, mobile-first design",
+        "E-commerce store setups with payment integrations",
+        "CMS platforms (WordPress, Shopify, custom)",
+        "Performance optimization (speed, SEO, security)"
+      ],
+      process: [
+        "Discovery session and requirement analysis",
+        "Design mockups and user experience planning",
+        "Development with modern frameworks",
+        "Testing across devices and browsers",
+        "Launch, training, and ongoing maintenance"
+      ],
+      caseStudy: {
+        client: "Real estate website",
+        result: "35% increase in inquiries",
+        details: "Rebuilt website, cutting load time by 60%."
+      },
+      whatItIs: "Custom websites designed for performance, branding, and conversions.",
+      whyItMatters: "Your website is your 24/7 salesperson. If it looks outdated or loads slow, you're losing trust and sales.",
+      whatWeDo: [
+        "Responsive, mobile-first design",
+        "E-commerce store setups with payment integrations",
+        "CMS platforms (WordPress, Shopify, custom)",
+        "Performance optimization (speed, SEO, security)"
+      ],
+      deliverables: [
+        "Full website design",
+        "CMS setup",
+        "Testing + deployment",
+        "Maintenance (optional)"
+      ],
+      cta: "Your website should impress and convert. Xaloc builds sites that do both."
+    },
+    {
+      id: 2,
       icon: Facebook,
       title: "META Ads Management",
       shortDescription: "Strategic Facebook & Instagram advertising campaigns designed to convert and scale.",
@@ -166,7 +209,7 @@ const ServicesDetailPage = () => {
       cta: "Ready to dominate Facebook & Instagram? Let Xaloc build your next high-performing ad campaign."
     },
     {
-      id: 2,
+      id: 3,
       icon: Search,
       title: "Google Ads Campaigns",
       shortDescription: "Data-driven PPC campaigns that maximize ROI and dominate search results.",
@@ -211,7 +254,7 @@ const ServicesDetailPage = () => {
       cta: "Show up where your customers are searching. Let Xaloc take your Google Ads to the top."
     },
     {
-      id: 3,
+      id: 4,
       icon: Globe,
       title: "SEO & Website Indexing",
       shortDescription: "Boost organic visibility, dominate rankings, and grow sustainably with SEO.",
@@ -254,7 +297,7 @@ const ServicesDetailPage = () => {
       cta: "Stop hiding on page 2. Let Xaloc put your brand in the spotlight."
     },
     {
-      id: 4,
+      id: 5,
       icon: MapPin,
       title: "GMB Management",
       shortDescription: "Optimize your local presence, attract nearby customers, and boost reviews.",
@@ -295,49 +338,6 @@ const ServicesDetailPage = () => {
         "Monthly GMB performance report"
       ],
       cta: "Be the top choice when locals search. Xaloc makes your GMB work for you 24/7."
-    },
-    {
-      id: 5,
-      icon: Monitor,
-      title: "Website Design & Development",
-      shortDescription: "Custom websites that look stunning and perform seamlessly across devices.",
-      highlights: ["Modern UI/UX", "Mobile-first", "SEO-ready builds"],
-      gradient: "from-cyan-600 to-blue-600",
-      hoverGradient: "from-cyan-500 to-blue-500",
-      detailedDescription: "Custom websites designed for performance, branding, and conversions. Your website is your 24/7 salesperson. If it looks outdated or loads slow, you're losing trust and sales.",
-      benefits: [
-        "Responsive, mobile-first design",
-        "E-commerce store setups with payment integrations",
-        "CMS platforms (WordPress, Shopify, custom)",
-        "Performance optimization (speed, SEO, security)"
-      ],
-      process: [
-        "Discovery session and requirement analysis",
-        "Design mockups and user experience planning",
-        "Development with modern frameworks",
-        "Testing across devices and browsers",
-        "Launch, training, and ongoing maintenance"
-      ],
-      caseStudy: {
-        client: "Real estate website",
-        result: "35% increase in inquiries",
-        details: "Rebuilt website, cutting load time by 60%."
-      },
-      whatItIs: "Custom websites designed for performance, branding, and conversions.",
-      whyItMatters: "Your website is your 24/7 salesperson. If it looks outdated or loads slow, you're losing trust and sales.",
-      whatWeDo: [
-        "Responsive, mobile-first design",
-        "E-commerce store setups with payment integrations",
-        "CMS platforms (WordPress, Shopify, custom)",
-        "Performance optimization (speed, SEO, security)"
-      ],
-      deliverables: [
-        "Full website design",
-        "CMS setup",
-        "Testing + deployment",
-        "Maintenance (optional)"
-      ],
-      cta: "Your website should impress and convert. Xaloc builds sites that do both."
     },
     {
       id: 6,

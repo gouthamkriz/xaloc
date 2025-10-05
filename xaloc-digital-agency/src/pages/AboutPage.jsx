@@ -97,6 +97,61 @@ const AboutPage = () => {
 
   return (
     <MainLayout>
+      {/* SEO Keywords */}
+      <div className="sr-only">
+        Trusted Digital Marketing Agency Trusted Digital Marketing Agency Trusted Digital Marketing Agency Trusted Digital Marketing Agency
+        Experienced Team of Marketing Experts Experienced Team of Marketing Experts Experienced Team of Marketing Experts Experienced Team of Marketing Experts
+        Best Digital Marketing Agency in Kerala Best Digital Marketing Agency in Kerala Best Digital Marketing Agency in Kerala Best Digital Marketing Agency in Kerala
+        Full-Service Marketing & Development Agency Full-Service Marketing & Development Agency Full-Service Marketing & Development Agency Full-Service Marketing & Development Agency
+        Web Development Company Web Development Company Web Development Company Web Development Company
+        App Development Experts App Development Experts App Development Experts App Development Experts
+        SEO Specialists SEO Specialists SEO Specialists SEO Specialists
+        Google Ads & PPC Experts Google Ads & PPC Experts Google Ads & PPC Experts Google Ads & PPC Experts
+        ROI-Focused Strategies ROI-Focused Strategies ROI-Focused Strategies ROI-Focused Strategies
+        Social Media Marketing Professional Social Media Marketing Professional Social Media Marketing Professional Social Media Marketing Professional
+        business business business business
+        kerala kerala kerala kerala
+        Thrissur Thrissur Thrissur Thrissur
+        Website Design Services Website Design Services Website Design Services Website Design Services
+        development development development development
+        professional professional professional professional
+        e-commerce e-commerce e-commerce e-commerce
+        user friendly user friendly user friendly user friendly
+        best best best best
+        kerala kerala kerala kerala
+        Thrissur Thrissur Thrissur Thrissur
+        api integration api integration api integration api integration
+        front end front end front end front end
+        back end back end back end back end
+        mobile friendly mobile friendly mobile friendly mobile friendly
+        fast fast fast fast
+        secure secure secure secure
+        seo seo seo seo
+        experienced experienced experienced experienced
+        web solutions web solutions web solutions web solutions
+        Facebook Facebook Facebook Facebook
+        Instagram Instagram Instagram Instagram
+        ads ads ads ads
+        Best Best Best Best
+        meta ads meta ads meta ads meta ads
+        thrissur thrissur thrissur thrissur
+        Meta Ads Experts in Kerala Meta Ads Experts in Kerala Meta Ads Experts in Kerala Meta Ads Experts in Kerala
+        Trusted Trusted Trusted Trusted
+        scaling scaling scaling scaling
+        growth growth growth growth
+        Google Ads Google Ads Google Ads Google Ads
+        Campaign Campaign Campaign Campaign
+        PPC PPC PPC PPC
+        best best best best
+        trusted trusted trusted trusted
+        kerala kerala kerala kerala
+        Thrissur Thrissur Thrissur Thrissur
+        youtube youtube youtube youtube
+        certified certified certified certified
+        experienced experienced experienced experienced
+        GMB GMB GMB GMB
+        ROI ROI ROI ROI
+      </div>
       {/* Section 1: Hero Heading */}
       <section className="py-20 relative">
         <video
